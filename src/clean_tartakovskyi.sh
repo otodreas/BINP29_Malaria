@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$(dirname $0)"
+cd "$(dirname "$0")"
 
 ./removeScaffold.py \
     ../data/raw_genomes/Haemoproteus_tartakovskyi.genome \

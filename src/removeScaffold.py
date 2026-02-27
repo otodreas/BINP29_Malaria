@@ -1,4 +1,4 @@
-#!/usr/bin/python3                                                             
+#!/usr/bin/env python3.12                                                             
                                                                       
 # A quick and dirty program              
 # sys.argv[1] is input fasta file name
