@@ -1,1 +1,3 @@
-data/genomes/
+data/raw_genomes/
+data/clean_genomes/
+.venv/
