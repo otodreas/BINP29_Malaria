@@ -5,22 +5,34 @@ Malaria case study for BINP29 at Lund University
 
 Run all steps from root
 
-1. Build environment TODO: generate requirements
-2. Copy raw genomes into `data/raw_genomes/`
-3. Make all scripts executable
+1. Build environment TODO: generate requirements IF NEEDED, otherwise delete environment
+2. Create data directories
+
+```sh
+mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict/H_tartak,3_avian_removed}
+```
+
+3. Copy raw genomes into `data/0_raw_genomes/`
+4. Make all scripts executable
 
 ```sh
 chmod +x src/*
 ```
 
-4. Clean *H. tartakovskyi* genome
+5. Clean *H. tartakovskyi* genome
 
 ```sh
-./src/clean_tartakovskyi.sh
+./src/1_clean_tartakovskyi.sh
 ```
 
-5. Get *H. tartakovskyi* sequence length stats
+6. Predict genes for *H. tartakovskyi* using `gmes_petap.pl`
 
 ```sh
-./src/seq_lengths_tartakovskyi.sh | ./src/seq_lengths_stats.py
+./src/2_predict_tartakovskyi.sh
+```
+
+7. Remove scaffolds that have genes of avian origin
+
+```sh
+./src/3_remove_avian_scaffolds.sh
 ```
