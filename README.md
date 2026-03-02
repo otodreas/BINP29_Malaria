@@ -1,4 +1,5 @@
 # BINP29_Malaria
+
 Malaria case study for BINP29 at Lund University
 
 I am not running a viritual environment but will export a requirements file if the workflow ends up having dependencies.
