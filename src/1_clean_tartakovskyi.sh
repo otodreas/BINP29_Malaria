@@ -2,6 +2,7 @@
 
 cd "$(dirname "$0")"
 
+# Filter scaffolds
 ./removeScaffold.py \
     ../data/0_raw_genomes/Haemoproteus_tartakovskyi.genome \
     38 \

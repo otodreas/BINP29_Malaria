@@ -9,7 +9,7 @@ Run all steps from root
 2. Create data directories
 
 ```sh
-mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict,3_avian_removed}
+mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict_gtf,3_gene_predict_fasta,4_avian_removed}
 ```
 
 3. Copy raw genomes into `data/0_raw_genomes/`
@@ -31,8 +31,8 @@ chmod +x src/*
 ./src/2_predict_tartakovskyi.sh
 ```
 
-7. Remove scaffolds that have genes of avian origin
+7. Create `fasta` sequences from the `gtf` file
 
 ```sh
-./src/3_remove_avian_scaffolds.sh
+./src/3_gtf_to_fasta.sh
 ```

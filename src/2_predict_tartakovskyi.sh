@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")"/../data/2_gene_predict
+cd "$(dirname "$0")"/../data/2_gene_predict_gtf
 
+# Run gene prediction
 gmes_petap.pl \
     --ES \
     --cores 20 \

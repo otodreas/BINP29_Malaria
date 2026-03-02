@@ -13,3 +13,5 @@ The pipeline
 ```
 
 gets the stats on the scaffold lengths after cleaning. This is unecessary because the minimum contig length for `gmes_petap.pl` (gene prediction algorithm) is set to the minimum contig length of the cleaned dataset (filter cutoff in `src/removeScaffold.py`) at 3000 bp.
+
+Note that the script requires numpy and will not run unless it is installed
