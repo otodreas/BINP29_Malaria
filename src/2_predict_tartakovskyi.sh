@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")"/../data/2_gene_predict/H_tartak
+cd "$(dirname "$0")"/../data/2_gene_predict
 
 gmes_petap.pl \
     --ES \

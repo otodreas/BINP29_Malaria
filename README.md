@@ -9,7 +9,7 @@ Run all steps from root
 2. Create data directories
 
 ```sh
-mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict/H_tartak,3_avian_removed}
+mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict,3_avian_removed}
 ```
 
 3. Copy raw genomes into `data/0_raw_genomes/`
