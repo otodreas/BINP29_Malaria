@@ -9,3 +9,8 @@ gmes_petap.pl \
     --min_contig 3000 \
     --sequence \
     ../../1_clean_genomes/Haemoproteus_tartakovskyi_clean.genome
+
+# Reformat gtf
+cat genemark.gtf | \
+    sed "s/ GC=.*\tGeneMark.hmm/\tGeneMark.hmm/" > \
+    genemark_Ht_2.gtf
