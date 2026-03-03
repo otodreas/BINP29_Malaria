@@ -11,6 +11,10 @@ cd "$(dirname "$0")"/..
 #     data/5_no_avian_scaffolds/removed_contigs.txt
 
 # Create new fna file without the removed contigs
-cp data/3_gene_predict_fasta/genemark_Ht.fna \
-    data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
+touch data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
 
+# Run remove_avian.py
+./src/remove_avian.py \
+    data/5_no_avian_scaffolds/removed_contigs.txt \
+    data/3_gene_predict_fasta/genemark_Ht.fna \
+    data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
