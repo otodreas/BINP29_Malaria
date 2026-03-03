@@ -12,7 +12,7 @@ Run all steps from root
 2. Create data directories
 
 ```sh
-mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict_gtf,3_gene_predict_fasta,4_blast}
+mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict_gtf,3_gene_predict_fasta,4_blast,5_no_avian_scaffolds}
 ```
 
 3. Copy raw genomes into `data/0_raw_genomes/`
@@ -40,8 +40,14 @@ chmod +x src/*
 ./src/3_gtf_to_fasta.sh
 ```
 
-8. Get scaffolds that have genes that are of avian origin
+8. Run BLASTX on data
 
 ```sh
 ./src/4_blast.sh
+```
+
+9. Remove host scaffolds
+
+```sh
+./src/remove_host_scaffolds.sh
 ```
