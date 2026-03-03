@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")"
+# Usage: ./3_gtf_to_fasta.sh genome.fasta predictions.gtf out_dir
 
 # Create FASTA file from GTF
-./gffParse.pl \
-    -i ../data/1_clean_genomes/Haemoproteus_tartakovskyi_clean.genome \
-    -g ../data/2_gene_predict_gtf/genemark_Ht_2.gtf \
-    -b ../data/3_gene_predict_fasta/genemark_Ht \
-    -p -c
+./"$(dirname "$0")"/gffParse.pl -i "$1" -g "$2" -b "$3" -p -c

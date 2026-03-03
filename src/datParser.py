@@ -23,7 +23,7 @@ Approach:
 * Print scaffolds that derive from bird.
 """
 
-#%%
+# %%
 
 import sys
 
@@ -33,9 +33,11 @@ try:
     taxfile = sys.argv[3]
     uniprot = sys.argv[4]
 except:
-    print("Run program like: datParser.py Ht.blastx Ht.fna taxonomy.dat uniprot_sprot.dat")
+    print(
+        "Run program like: datParser.py Ht.blastx Ht.fna taxonomy.dat uniprot_sprot.dat"
+    )
     sys.exit()
-#%%
+# %%
 ################## PARSE BLAST FILE #############################
 # The Q boolean is to control that only the first hit for each query is included.
 Q = False
@@ -62,11 +64,11 @@ with open(blastfile, "r") as BLAST:
                 Q = False
 
 ###################################################################
-#%%
+# %%
 
 ##################### Get GeneIDset for birdtaxonomy ##############
 aves_found = False
-SN = ''
+SN = ""
 SNset = set()
 with open(taxfile, "r") as T1:
     for line in T1:
@@ -89,21 +91,23 @@ with open(taxfile, "r") as T1:
                 aves_found = True
 
 
-#%%
+# %%
+
 
 def check(SNlist):
     # Function to check if any of the items in the list are also found in the SNset - meaning that the item is a bird species.
     for S in SNlist:
         if S in SNset:
-            return(True)
+            return True
 
-    return(False)
+    return False
+
 
 ##################### Parse uniprot_sprot.dat #####################
 birdIDs = set()
-OC = ''
-AC = ''
-i=0
+OC = ""
+AC = ""
+i = 0
 OC_dict = {}
 AClist = []
 with open(uniprot, "r") as UNIPROT:
@@ -116,7 +120,7 @@ with open(uniprot, "r") as UNIPROT:
                     if check(OC) == True:
                         AClist += AC_dict[AC]
             AC = line.rstrip().split()[-1][:-1]
-            OC = ''
+            OC = ""
         elif line.startswith("OC"):
             line = line.rstrip().replace(" ", "")[2:-1]
             line = line.split(";")
@@ -127,18 +131,16 @@ with open(uniprot, "r") as UNIPROT:
 
 
 ##################################################################
-#%%
+# %%
 
 #################### Retrieve Scaffold list ######################
-                
-                
+
+
 with open(fastafile, "r") as Fasta:
     for line in Fasta:
         if line.startswith(">"):
             ID = line.split()[0][1:]
             if ID in AClist:
                 print(line.split()[2].split("=")[-1])
-    
+
 ###################################################################
-    
-    

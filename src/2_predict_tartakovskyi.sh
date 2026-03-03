@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")"/../data/2_gene_predict_gtf
+# Usage: ./2_predict_tartakovskyi.sh genome.fasta out_dir
 
 # Run gene prediction
 gmes_petap.pl \
     --ES \
+    --work_dir "$2" \
     --cores 20 \
     --min_contig 3000 \
     --sequence \
-    ../../1_clean_genomes/Haemoproteus_tartakovskyi_clean.genome
+    "$1"
 
 # Reformat gtf
-cat genemark.gtf | \
+cat "$2"/genemark.gtf | \
     sed "s/ GC=.*\tGeneMark.hmm/\tGeneMark.hmm/" > \
-    genemark_Ht_2.gtf
+    "$2"/genemark_2.gtf

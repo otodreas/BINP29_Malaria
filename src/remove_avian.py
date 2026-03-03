@@ -21,5 +21,5 @@ with open(fasta_fp) as fasta, open(filt_fasta_fp, "a") as fasta_filt:
         elif write_seq:
             fasta_filt.write(line.strip() + "\n")
             write_seq = False
-            
+
         header = not header
