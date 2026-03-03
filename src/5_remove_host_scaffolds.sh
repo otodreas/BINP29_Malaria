@@ -2,9 +2,18 @@
 
 cd "$(dirname "$0")"/..
 
-# Retrieve the host scaffolds
-./src/datParser.py \
-    data/4_blast/Ht.blastx \
-    data/3_gene_predict_fasta/genemark_Ht.fna \
-    server_data/taxonomy.dat \
-    server_data/uniprot_sprot.dat |\
+# # Retrieve the host scaffolds
+# ./src/datParser.py \
+#     data/4_blast/Ht.blastx \
+#     data/3_gene_predict_fasta/genemark_Ht.fna \
+#     server_data/taxonomy.dat \
+#     server_data/uniprot_sprot.dat >\
+#     data/5_no_avian_scaffolds/removed_contigs.txt
+
+# Create new fna file without the removed contigs
+cp data/3_gene_predict_fasta/genemark_Ht.fna \
+    data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
+
+while read contig; do
+    # data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
+done < data/5_no_avian_scaffolds/removed_contigs.txt 
