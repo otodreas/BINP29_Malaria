@@ -14,6 +14,3 @@ cd "$(dirname "$0")"/..
 cp data/3_gene_predict_fasta/genemark_Ht.fna \
     data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
 
-while read contig; do
-    # data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna
-done < data/5_no_avian_scaffolds/removed_contigs.txt 
