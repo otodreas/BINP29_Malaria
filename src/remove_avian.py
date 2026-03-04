@@ -13,8 +13,7 @@ with open(fasta_fp) as fasta, open(filt_fasta_fp, "a") as fasta_filt:
 
     for line in fasta:
         if header:
-            contig = line.split()[2]
-            contig = contig[contig.index("=") + 1 :]
+            contig = line.split()[0][1:]
             if contig not in contigs_key:
                 fasta_filt.write(line.strip() + "\n")
                 write_seq = True

@@ -49,12 +49,12 @@ chmod +x src/*
 9. Remove host scaffolds
 
 ```sh
-./src/remove_host_scaffolds.sh
+./src/5_remove_host_scaffolds.sh 
 ```
 
 10. Generate new gene predictions without avian scaffolds
 
 ```sh
-./src/2_predict_tartakovskyi.sh data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna data/6_new_gene_predict_gtf
-./src/3_gtf_to_fasta.sh data/5_no_avian_scaffolds/genemark_Ht_no_avian.fna data/6_new_gene_predict_gtf/genemark_2.gtf data/7_new_gene_predict_fasta/genemark_Ht
+./src/2_predict_tartakovskyi.sh data/5_no_avian_scaffolds/Haemoproteus_tartakovskyi_clean_no_avian.genome data/6_new_gene_predict_gtf
+./src/3_gtf_to_fasta.sh data/5_no_avian_scaffolds/Haemoproteus_tartakovskyi_clean_no_avian.genome data/6_new_gene_predict_gtf/genemark_2.gtf data/7_new_gene_predict_fasta/genemark_Ht
 ```
