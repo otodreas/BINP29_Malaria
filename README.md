@@ -56,5 +56,10 @@ chmod +x src/*
 
 ```sh
 ./src/2_predict_tartakovskyi.sh data/5_no_avian_scaffolds/Haemoproteus_tartakovskyi_clean_no_avian.genome data/6_new_gene_predict_gtf
+```
+
+11. Convert new gene predictions to `fasta` format
+
+```sh
 ./src/3_gtf_to_fasta.sh data/5_no_avian_scaffolds/Haemoproteus_tartakovskyi_clean_no_avian.genome data/6_new_gene_predict_gtf/genemark_2.gtf data/7_new_gene_predict_fasta/genemark_Ht
 ```
