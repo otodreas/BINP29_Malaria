@@ -90,3 +90,12 @@ cp data/7_new_gene_predict_fasta/genemark_Ht.faa data/9_parsed_genomes/Ht.faa
 ```sh
 ./src/7_run_proteinortho.sh
 ```
+
+## Answers to questions
+
+1. Yes, I think that parasites that use similar hosts will group together
+2. It should be less likely that an algorithm is able to construct a long bird scaffold due to there being fewer bird sequences in the raw data.
+3. 
+4. 
+5. Some species will have different GC than others due to things like HGT
+6. Curly braces are a shell wildcard, allowing for many different filenames
