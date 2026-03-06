@@ -7,6 +7,7 @@ I am not running a viritual environment but will export a requirements file if t
 ## Requirements
 - Server programs
 - Python 3.12.10
+- Perl 5.38.4
 - proteinortho 6.3.6
 
 ## Workflow
@@ -72,13 +73,11 @@ I selected a %GC cutoff of 38%.
 
 11. Copy the rest of the genomes and gff/gtf files into `8_all_fasta`
 
-12. Copy `data/7_new_gene_predict_fasta/genemark_Ht.fna` into `data/9_parsed_genomes`
-
 ```sh
 cp data/7_new_gene_predict_fasta/genemark_Ht.fna data/9_parsed_genomes
 ```
 
-13. Run `gffParse.pl` on the rest of the genomes
+12. Run `gffParse.pl` on the rest of the genomes
 
 ```sh
 
@@ -87,7 +86,7 @@ cp data/7_new_gene_predict_fasta/genemark_Ht.fna data/9_parsed_genomes
 ## Answers to questions
 
 1. Yes, I think parasites that use similar hosts will group together in a phylogenetic tree
-2. -
-3. -
-4. -
+2. 
+3. 
+4. 
 5. 
