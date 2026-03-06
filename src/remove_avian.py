@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# Self written script
+# Usage: remove_avian.py contigs.txt genome_in.faa genome_out.faa
+
 import sys
 
 contigs_fp, fasta_fp, filt_fasta_fp = sys.argv[1:4]
