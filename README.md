@@ -74,13 +74,13 @@ I selected a %GC cutoff of 38%.
 11. Copy the rest of the genomes and gff/gtf files into `8_all_fasta`
 
 ```sh
-cp data/7_new_gene_predict_fasta/genemark_Ht.fna data/9_parsed_genomes
+cp data/7_new_gene_predict_fasta/genemark_Ht.faa data/9_parsed_genomes/Ht.faa
 ```
 
 12. Run `gffParse.pl` on the rest of the genomes
 
 ```sh
-
+./src/6_gtf_to_fasta_iter.sh
 ```
 
 ## Answers to questions
