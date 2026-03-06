@@ -1,4 +1,4 @@
 .vscode/
 data/
-tools/
+src/proteinortho-master/
 **/nohup.out

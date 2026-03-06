@@ -25,6 +25,8 @@ mkdir -p data/{0_raw_genomes,1_clean_genomes,2_gene_predict_gtf,3_gene_predict_f
 
 ```sh
 chmod +x src/*
+chmod -x src/README.md
+chmod -x proteinortho-master.tar.gz
 ```
 
 4. Clean *H. tartakovskyi* genome
@@ -83,10 +85,8 @@ cp data/7_new_gene_predict_fasta/genemark_Ht.faa data/9_parsed_genomes/Ht.faa
 ./src/6_gtf_to_fasta_iter.sh
 ```
 
-## Answers to questions
+13. Run `proteinortho` on all parsed genomes
 
-1. Yes, I think parasites that use similar hosts will group together in a phylogenetic tree
-2. 
-3. 
-4. 
-5. 
+```sh
+./src/7_run_proteinortho.sh
+```

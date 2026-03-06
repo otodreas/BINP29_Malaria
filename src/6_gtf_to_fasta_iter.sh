@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+# Usage: ./6_gtf_to_fasta_iter.sh
+
+# Declare pairs
 declare -A pairs=(
     ["cynomolgi.gtf"]="Plasmodium_cynomolgi.genome"
     ["knowlesi.gtf"]="Plasmodium_knowlesi.genome"
@@ -10,6 +13,7 @@ declare -A pairs=(
     ["vivax.gtf"]="Plasmodium_vivax.genome"
 )
 
+# Declare output basenames
 declare -A outnames=(
     ["cynomolgi.gtf"]="Pc"
     ["knowlesi.gtf"]="Pk"
@@ -20,14 +24,15 @@ declare -A outnames=(
     ["vivax.gtf"]="Pv"
 )
 
+# Define variables
 BASE="$(dirname "$0")/../data/8_all_fasta"
 GTF_DIR="$BASE/gtf"
 GENOME_DIR="$BASE/plasmodiumGenomes"
-OUT_DIR="$(dirname "$0")/../data/output"
+OUT_DIR="$(dirname "$0")/../data/9_parsed_genomes"
 
+# Run gffParse.pl iteratively
 for gtf in "${!pairs[@]}"; do
     genome="${pairs[$gtf]}"
     outname="${outnames[$gtf]}"
-    echo "Running: script $GTF_DIR/$gtf $GENOME_DIR/$genome $OUT_DIR/$outname"
-    src/gffParse.pl "$GTF_DIR/$gtf" "$GENOME_DIR/$genome" "$OUT_DIR/$outname"
+    ./src/gffParse.pl -i "$GTF_DIR/$gtf" -g "$GENOME_DIR/$genome" -b "$OUT_DIR/$outname" -p -c
 done
